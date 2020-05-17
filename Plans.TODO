@@ -1,17 +1,17 @@
 ✔ PIN information @done(20-05-17 19:13)
-☐ Mandatory fields reader
-    ☐ ICCID label
-    ☐ LP label
-    ☐ IMSI label
-    ☐ KC label
-    ☐ HPLMN label
-    ☐ SST label
-    ☐ BCCH label
-    ☐ ACC label
-    ☐ FPPLMN label
-    ☐ LOCI label
-    ☐ AD label
-    ☐ Phase label
+✔ Mandatory fields reader @done(20-05-17 20:15)
+    ✔ ICCID label @done(20-05-17 20:15)
+    ✔ LP label @done(20-05-17 20:15)
+    ✔ IMSI label @done(20-05-17 20:15)
+    ✔ KC label @done(20-05-17 20:15)
+    ✔ HPLMN label @done(20-05-17 20:15)
+    ✔ SST label @done(20-05-17 20:15)
+    ✔ BCCH label @done(20-05-17 20:15)
+    ✔ ACC label @done(20-05-17 20:15)
+    ✔ FPPLMN label @done(20-05-17 20:15)
+    ✔ LOCI label @done(20-05-17 20:15)
+    ✔ AD label @done(20-05-17 20:15)
+    ✔ Phase label @done(20-05-17 20:15)
 ☐ Number (contacts) editor / reader
     ☐ ADN number list
     ☐ ADN number search
