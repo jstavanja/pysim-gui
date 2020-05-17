@@ -18,14 +18,14 @@ class PySIMGUI(tk.Tk):
         container.grid_columnconfigure(0, weight=1)
 
         self.frames = {}
-        for F in (SIMConnector, MainPanel):
+        for F in (SIMConnectorPanel, MainPanel, PINInformationPanel):
             page_name = F.__name__
             frame = F(parent=container, controller=self)
             self.frames[page_name] = frame
 
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_frame("SIMConnector")
+        self.show_frame("SIMConnectorPanel")
 
     def show_frame(self, page_name):
         '''Show a frame for the given page name'''
@@ -33,7 +33,7 @@ class PySIMGUI(tk.Tk):
         frame.tkraise()
 
 
-class SIMConnector(tk.Frame):
+class SIMConnectorPanel(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -62,6 +62,30 @@ class SIMConnector(tk.Frame):
         self.controller.show_frame("MainPanel")
 
 
+class PINInformationPanel(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        self.controller = controller
+
+        chv1_enabled = True # TODO: add pysim call
+        chv1_tries_left = 3 # TODO: add pysim call
+
+        chv1_enabled_label = tk.Label(
+            self, text="CHV1 Code enabled: " + str(chv1_enabled))
+        chv1_enabled_label.pack()
+
+        chv1_tries_left_label = tk.Label(
+            self, text="CHV1 Tries left: " + str(chv1_tries_left))
+        chv1_tries_left_label.pack()
+
+        button = tk.Button(self, text="Back to main panel", command=self.returnToMainPanel)
+        button.pack()
+
+    def returnToMainPanel(self):
+        self.controller.show_frame("MainPanel")
+
+
 class MainPanel(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -69,9 +93,14 @@ class MainPanel(tk.Frame):
         self.controller = controller
         label = tk.Label(self, text="Choose operation")
         label.pack(side="top", fill="x", pady=10)
-        button = tk.Button(self, text="Connect to different serial port",
-                           command=lambda: controller.show_frame("SIMConnector"))
-        button.pack()
+
+        pin_information_button = tk.Button(self, text="View PIN information",
+                           command=lambda: controller.show_frame("PINInformationPanel")) 
+        pin_information_button.pack()
+
+        reconnect_button = tk.Button(self, text="Connect to different serial port",
+                           command=lambda: controller.show_frame("SIMConnectorPanel"))
+        reconnect_button.pack()
 
 
 if __name__ == "__main__":

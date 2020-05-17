@@ -1,0 +1,26 @@
+✔ PIN information @done(20-05-17 19:13)
+☐ Mandatory fields reader
+    ☐ ICCID label
+    ☐ LP label
+    ☐ IMSI label
+    ☐ KC label
+    ☐ HPLMN label
+    ☐ SST label
+    ☐ BCCH label
+    ☐ ACC label
+    ☐ FPPLMN label
+    ☐ LOCI label
+    ☐ AD label
+    ☐ Phase label
+☐ Number (contacts) editor / reader
+    ☐ ADN number list
+    ☐ ADN number search
+    ☐ ADN entry setter input + button
+    ☐ FDN number list
+    ☐ FDN number search
+    ☐ LND number list
+    ☐ LND number search
+    ☐ LND entry setter input + button
+☐ SMS reader
+    ☐ ADN number list
+    ☐ ADN number search 
